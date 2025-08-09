@@ -1,0 +1,9 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+  <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Note</h2>
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-link nav-link" style="display:inline; padding:0;">
+        Logout
+    </button>
+</form>

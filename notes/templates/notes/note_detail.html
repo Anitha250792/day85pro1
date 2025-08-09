@@ -1,0 +1,17 @@
+{% extends 'notes/base.html' %}
+{% block title %}{{ note.title }}{% endblock %}
+{% block content %}
+  <h2>{{ note.title }}</h2>
+  <p class="text-muted">By {{ note.owner.username }} &middot; Updated {{ note.updated_at|date:"Y-m-d H:i" }}</p>
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="card-text">{{ note.content|linebreaks }}</p>
+    </div>
+  </div>
+
+  {% if user.is_superuser or note.owner == user %}
+    <a class="btn btn-primary" href="{% url 'notes:update' note.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'notes:delete' note.pk %}">Delete</a>
+  {% endif %}
+  <a class="btn btn-secondary" href="{% url 'notes:list' %}">Back</a>
+{% endblock %}
