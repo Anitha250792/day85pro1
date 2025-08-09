@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h6s)2h=b9y&=idv1%=f7d=^h144#1qj=6*q--(b0_koa-xpp!4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['day85pro1.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -128,3 +128,4 @@ LOGOUT_REDIRECT_URL = 'login'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
